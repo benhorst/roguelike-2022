@@ -4,4 +4,4 @@
 
 [Tutorial Link](https://rogueliketutorials.com/tutorials/tcod/v2/part-0/)
 
-[current step](https://rogueliketutorials.com/tutorials/tcod/v2/part-4/) 4
+[current step](https://rogueliketutorials.com/tutorials/tcod/v2/part-5/) 5
