@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Iterable, TYPE_CHECKING
+from typing import Iterable, Optional, TYPE_CHECKING
 
 import numpy as np  # type: ignore
 from tcod.console import Console
@@ -20,6 +20,15 @@ class GameMap:
         self.visible = np.full((width, height), fill_value=False, order="F")  # Tiles the player can currently see
         self.explored = np.full((width, height), fill_value=False, order="F")  # Tiles the player can currently see
 
+    def get_blocking_enemy_at(
+        self,
+        x: int,
+        y: int
+    ) -> Optional[Entity]:
+        for entity in self.entities:
+            if entity.blocks_movement and entity.x == x and entity.y == y:
+                return entity
+        return None
 
     def in_bounds(self, x: int, y: int) -> bool:
         """Return True if x and y are inside of the bounds of this map."""
